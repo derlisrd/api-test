@@ -5,6 +5,7 @@ const router = Router()
 
 
 
+
 router.get('/',PostController.all)
 
 router.get('/:id',PostController.find)
