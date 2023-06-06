@@ -40,7 +40,12 @@ Esta es una API CRUD básica desarrollada con Node.js que utiliza Express y Sequ
 
 ## Endpoints
 
-La API proporciona los siguientes endpoints para la tabla `posts`:
+Por ejemplo la API proporciona los siguientes endpoints para la tabla `posts`:
+
+- ``Recuerda que en los endpoints de los posts se requiere incluir el JWT en el encabezado de la solicitud utilizando el formato `Authorization: Bearer {JWT}`. Esto garantiza que las solicitudes sean autenticadas y solo sean accesibles para los usuarios autenticados.``
+
+    ```bash
+    Authorization: Bearer {JWT}
 
 - **GET /posts** - Obtiene todos los posts.
 - **GET /posts/:id** - Obtiene un post por su ID.
