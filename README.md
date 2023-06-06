@@ -67,10 +67,9 @@ Un objeto Post tiene la siguiente estructura:
 } 
 ```
 
-## Si quieres crear más tablas necesita cumplir las siguientes condiciones
-
-- **Crear un modelo en la carpeta Models** - El ejemplo lo puedes tomar del modelo Post que se encuentra en la Models/Post.js
-- **Crear sus CRUD** - Obtiene un post por su ID.
-- **POST /posts** - Crea un nuevo post.
-- **PUT /posts/:id** - Actualiza un post existente.
-- **DELETE /posts/:id** - Elimina un post por su ID.
+## Creando más tablas y endpoints
+ 
+- **Crear un modelo en la carpeta Models** - con el nombre del modelo en singular. Ej: Producto.js
+- **Crear un controllador en la carpeta Controllers** - con el nombre del modelo seguido de controllador. Ej: ProductoController.js
+- **Crear una ruta en la carpeta Routes** - con el nombre en plural. Ej: productos.js
+- **Generar los verbos necesarios** - GET/POST/PUT/DELETE Tomar ejemplos de archivo ./Controller/PostController.js
