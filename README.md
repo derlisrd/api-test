@@ -33,11 +33,30 @@ Esta es una API CRUD básica desarrollada con Node.js que utiliza Express y Sequ
     ```bash
     npm run start
 
-La API estará disponible en http://localhost:3030.
+6. La API estará disponible
+    ```bash
+    http://localhost:3030.
 
-Endpoints
-    GET /posts: Obtiene todos los posts.
-    GET /posts/:id: Obtiene un post por su ID.
-    POST /posts: Crea un nuevo post.
-    PUT /posts/:id: Actualiza un post existente.
-    DELETE /posts/:id: Elimina un post existente.
+
+## Endpoints
+
+La API proporciona los siguientes endpoints para la tabla `posts`:
+
+- **GET /posts** - Obtiene todos los posts.
+- **GET /posts/:id** - Obtiene un post por su ID.
+- **POST /posts** - Crea un nuevo post.
+- **PUT /posts/:id** - Actualiza un post existente.
+- **DELETE /posts/:id** - Elimina un post por su ID.
+
+### Estructura del objeto Post
+
+Un objeto Post tiene la siguiente estructura:
+
+```json
+{
+  "id": 1,
+  "title": "Título del post",
+  "content": "Contenido del post",
+  "createdAt": "2023-06-06T12:00:00.000Z",
+  "updatedAt": "2023-06-06T12:00:00.000Z"
+}
