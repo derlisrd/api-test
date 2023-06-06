@@ -56,7 +56,7 @@ Un objeto Post tiene la siguiente estructura:
 {
   "id": 1,
   "title": "Título del post", // requido
-  "body": "Contenido del post", //requerido
+  "body": "Contenido del post", // requerido
   "createdAt": "2023-06-06T12:00:00.000Z",
   "updatedAt": "2023-06-06T12:00:00.000Z"
 }

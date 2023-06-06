@@ -6,8 +6,8 @@ const __filename = fileURLToPath(import.meta.url);
 
 const __dirname = path.dirname(__filename);
 
-
 const PATH_ROUTE = __dirname
+
 const router = Router()
 
 const cleanFileName = (filename)=>{
