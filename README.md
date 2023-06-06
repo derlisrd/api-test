@@ -65,3 +65,12 @@ Un objeto Post tiene la siguiente estructura:
   "createdAt": "2023-06-06T12:00:00.000Z",
   "updatedAt": "2023-06-06T12:00:00.000Z"
 }
+
+
+## Si quieres crear más tablas necesita cumplir las siguientes condiciones
+
+- **Crear un modelo en la carpeta Models** - Los 
+- **GET /posts/:id** - Obtiene un post por su ID.
+- **POST /posts** - Crea un nuevo post.
+- **PUT /posts/:id** - Actualiza un post existente.
+- **DELETE /posts/:id** - Elimina un post por su ID.
