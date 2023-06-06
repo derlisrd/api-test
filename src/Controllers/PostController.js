@@ -1,4 +1,4 @@
-import PostModel from "../Models/PostModel.js"
+import Post from "../Models/Post.js"
 
 class PostController{
 
@@ -6,7 +6,7 @@ class PostController{
     static find = async(req,res)=>{
         try {
             const {id} = req.params
-            let post = await PostModel.findByPk(id)
+            let post = await Post.findByPk(id)
             if(post){
                 return res.json(post)
             }
@@ -18,7 +18,7 @@ class PostController{
 
     static all = async(req,res)=>{
         try {
-            let posts = await PostModel.findAll()
+            let posts = await Post.findAll()
             return res.json(posts)
         } catch (err) {
             return res.status(500).json(err)
@@ -29,7 +29,7 @@ class PostController{
         try {
             const {title,body} = req.body
 
-            let inserted = await PostModel.create({
+            let inserted = await Post.create({
                 title,body
             })
 
@@ -44,7 +44,7 @@ class PostController{
         try {
             const {id} = req.params
             const {body} = req
-            let post = await PostModel.findByPk(id);
+            let post = await Post.findByPk(id);
             if (post) {
                 let updated = await post.update(body);
                 return res.json({updated})
@@ -59,7 +59,7 @@ class PostController{
     static destroy = async(req,res)=>{
         try {
             const {id} = req.params
-            let post = await PostModel.findByPk(id);
+            let post = await Post.findByPk(id);
             if (post) {
                 let deleted = await post.destroy();
                 return res.json({deleted})

@@ -1,17 +1,17 @@
 import { DataTypes } from 'sequelize';
 import {sequelize} from '../Database/conexion.js'
 
-const PostModel = sequelize.define('posts', {
+const User = sequelize.define('users', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    title: {
+    email: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    body: {
+    password: {
       type: DataTypes.TEXT,
       allowNull: false
     }
@@ -19,4 +19,4 @@ const PostModel = sequelize.define('posts', {
     
   });
 
-export default PostModel
+export default User
