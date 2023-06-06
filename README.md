@@ -26,15 +26,12 @@ Esta es una API CRUD básica desarrollada con Node.js que utiliza Express y Sequ
     Abre el archivo .env y actualiza la configuración de la base de datos con tus propias credenciales y detalles de conexión.
 
 4. Corre las migraciones
- 
- ```bash
+    ```bash
     npm run migrate
 
-
 5. Corre la aplicación
- ```bash
+    ```bash
     npm run start
-
 
 La API estará disponible en http://localhost:3030.
 
