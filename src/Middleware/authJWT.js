@@ -30,6 +30,6 @@ export default function (req, res, next){
         }
         return next();
     } catch (error) {
-        res.status(400).json({response:false,error:true,message:"Invalid token"});
+        res.status(401).json({response:false,error:true,message:"Invalid token"});
     }
 }

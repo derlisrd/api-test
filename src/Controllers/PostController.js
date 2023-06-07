@@ -18,7 +18,17 @@ class PostController{
 
     static all = async(req,res)=>{
         try {
-            let posts = await Post.findAll()
+            let { pagina, limite } = req.query;
+
+            // Valores predeterminados
+            pagina = pagina ? parseInt(pagina) : 1;
+            limite = limite ? parseInt(limite) : 10;
+
+            const offset = (pagina - 1) * limite;
+            let posts = await Post.findAll({
+                offset,
+                limit:limite
+            })
             return res.json(posts)
         } catch (err) {
             return res.status(500).json(err)

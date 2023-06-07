@@ -50,10 +50,7 @@ const opciones = {
   apis: ["./src/Routes/*.js"],
 };
 
-const options = {
-  swaggerDefinition,
-  apis: ["./src/Routes/*.js"], // Ruta de los archivos de rutas de Express
-};
+
 
 const swaggerSpec = swaggerJSDoc(opciones);
 

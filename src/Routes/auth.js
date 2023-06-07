@@ -73,10 +73,8 @@ const router = Router()
  *                 response:
  *                   type: boolean
  *                   description: Respuesta si todo fue exitoso.
- *       401:
- *         description: Credenciales inválidas. No se pudo iniciar sesión.
  *       500:
- *         description: Error interno del servidor al intentar iniciar sesión.
+ *         description: Error interno del servidor al intentar registrar.
  */
 
 router.post('/login',AuthController.login)
