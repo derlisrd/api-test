@@ -14,7 +14,7 @@ Esta es una API CRUD básica desarrollada con Node.js que utiliza Express y Sequ
 
    ```bash
    git clone https://github.com/derlisrd/api-test.git
-2. Instala la dependencia
+2. Instala las dependencias
     ```bash
     npm install
 3. Configura la base de datos:
@@ -30,6 +30,7 @@ Esta es una API CRUD básica desarrollada con Node.js que utiliza Express y Sequ
     ```bash
     npm run start
 6. La API estará disponible
+    
     ```bash
     http://localhost:3030
 
