@@ -3,6 +3,7 @@ import cors from 'cors'
 import env from './src/Config/env.js'
 import { router } from './src/Routes/index.js'
 import { setupSwagger } from './setupSwagger.js'
+import authJWT from './src/Middleware/authJWT.js'
 
 
 const app = express()
@@ -14,8 +15,7 @@ app.use(express.urlencoded({extended:false}))
 setupSwagger(app);
 
 
-app.use('/',router)
-
+app.use('/',authJWT,router)
 
 
 

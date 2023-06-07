@@ -10,7 +10,7 @@ class AuthController{
             const {email,password} = req.body
             const usuario = await User.findOne({ where: { email: email } });
             if (!usuario) {
-                return res.status(404).json({message:'Invalid credencials'})
+                return res.status(401).json({message:'Invalid credencials'})
             }
             
             const match = await comparePasswords(password, usuario.password);
@@ -19,7 +19,7 @@ class AuthController{
                 const token = generateToken({ id: usuario.id });
                 return res.json({token})
             } else {
-                return res.status(404).json({message:'Invalid credencials'})
+                return res.status(401).json({message:'Invalid credencials'})
             }
 
         } catch (err) {

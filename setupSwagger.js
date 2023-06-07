@@ -8,6 +8,15 @@ const swaggerDefinition = {
     version: "1.0.0",
     description: "Documentación de la API de Node Mysql",
   },
+  securityDefinitions: {
+    BearerAuth: {
+      type: 'apiKey',
+      name: 'Authorization',
+      in: 'header',
+      scheme: 'bearer',
+      bearerFormat: 'JWT',
+    },
+  },
   servers: [
     {
       url: "http://localhost:3030",
@@ -16,12 +25,37 @@ const swaggerDefinition = {
   ],
 };
 
+
+// Documentación de Swagger
+const opciones = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'API de Posts',
+      version: '1.0.0',
+      description: 'API para obtener posts paginados',
+    },
+    components:{
+      securitySchemes : {
+        BearerAuth: {
+          type: 'http',
+          name: 'Authorization',
+          in: 'header',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+        },
+      },
+    }
+  },
+  apis: ["./src/Routes/*.js"],
+};
+
 const options = {
   swaggerDefinition,
   apis: ["./src/Routes/*.js"], // Ruta de los archivos de rutas de Express
 };
 
-const swaggerSpec = swaggerJSDoc(options);
+const swaggerSpec = swaggerJSDoc(opciones);
 
 export const setupSwagger = (app) => {
   app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
