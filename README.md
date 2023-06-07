@@ -40,6 +40,23 @@ Esta es una API CRUD básica desarrollada con Node.js que utiliza Express y Sequ
 
 ## Endpoints
 
+### Inicia sesión con las credenciales de usuario
+    
+- **POST /auth/login** - Ingresa con la credenciales.
+- **POST /auth/register** - Crea un nuevo usuario.
+
+### Estructura del objeto Post
+El request de login y register tiene la siguiente estructura:
+
+```json
+{
+  "email": "email@email.com", //requerido
+  "password": "Título del post", //requerido
+} 
+```
+
+
+
 Por ejemplo la API proporciona los siguientes endpoints para la tabla `posts`:
 
 - ``Recuerda que en los endpoints de los posts se requiere incluir el JWT en el encabezado de la solicitud utilizando el formato `Authorization: Bearer {JWT}`. Esto garantiza que las solicitudes sean autenticadas y solo sean accesibles para los usuarios autenticados.``
@@ -69,7 +86,7 @@ Un objeto Post tiene la siguiente estructura:
 
 ## Creando más tablas y endpoints
  
-- **Crear un modelo en la carpeta Models** - con el nombre del modelo en singular. Ej: Producto.js
-- **Crear un controllador en la carpeta Controllers** - con el nombre del modelo seguido de controllador. Ej: ProductoController.js
-- **Crear una ruta en la carpeta Routes** - con el nombre en plural. Ej: productos.js
-- **Generar los verbos necesarios** - GET/POST/PUT/DELETE Tomar ejemplos de archivo ./Controller/PostController.js
+- **Crear modelo en carpeta Models** - con el nombre del modelo en singular. Ej: Producto.js
+- **Crear controllador en carpeta Controllers** - con el nombre del modelo seguido de "Controller". Ej: ProductoController.js
+- **Crear ruta en carpeta Routes** - con el nombre en plural. Ej: productos.js
+- **Generar verbos necesarios** - GET/POST/PUT/DELETE Tomar ejemplos de archivo ./Controller/PostController.js
