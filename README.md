@@ -37,12 +37,12 @@ Esta es una API CRUD básica desarrollada con Node.js que utiliza Express y Sequ
     ```bash
     http://localhost:3030
 
+
 ## Endpoints
 
 ## Documentacion
-    ```bash
-    http://localhost:3030/api-docs 
-    ```
+
+    http://localhost:3030/api-docs
 
 ### Inicia sesión con las credenciales de usuario
     
