@@ -34,7 +34,6 @@ Esta es una API CRUD básica desarrollada con Node.js que utiliza Express y Sequ
     npm run start
 
 6. La API estará disponible
-    ```bash
     http://localhost:3030
 
 
