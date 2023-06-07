@@ -14,11 +14,9 @@ Esta es una API CRUD básica desarrollada con Node.js que utiliza Express y Sequ
 
    ```bash
    git clone https://github.com/derlisrd/api-test.git
-
 2. Instala la dependencia
     ```bash
     npm install
-
 3. Configura la base de datos:
 
     Crea una base de datos en tu gestor de base de datos preferido.
@@ -28,14 +26,12 @@ Esta es una API CRUD básica desarrollada con Node.js que utiliza Express y Sequ
 4. Corre las migraciones
     ```bash
     npm run migrate
-
 5. Corre la aplicación
     ```bash
     npm run start
-
 6. La API estará disponible
+    ```bash
     http://localhost:3030
-
 
 ## Endpoints
 
@@ -93,3 +89,8 @@ Un objeto Post tiene la siguiente estructura:
 - **Crear controllador en carpeta Controllers** - con el nombre del modelo seguido de "Controller". Ej: ProductoController.js
 - **Crear ruta en carpeta Routes** - con el nombre en plural. Ej: productos.js
 - **Generar verbos necesarios** - GET/POST/PUT/DELETE Tomar ejemplos de archivo ./Controller/PostController.js
+
+ 
+## License  
+
+[MIT](https://choosealicense.com/licenses/mit/)
