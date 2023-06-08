@@ -102,10 +102,6 @@ export default router
  *                    message:
  *                      type: string
  *                      example: "Algo ocurrió con la petición intente más tarde"
- */
-
-/**
- * @swagger
  * /posts/{id}:
  *   get:
  *     security:
