@@ -10,28 +10,24 @@ class PostController{
             if(post){
                 return res.json(post)
             }
-            return res.status(404).json({message:'Not found'})
+            return res.status(404).json({response:false,message:'Post not found'})
         } catch (err) {
-            return res.status(500).json(err)
+            return res.status(500).json({response:false,message:err})
         }
     }
 
     static all = async(req,res)=>{
         try {
-            let { pagina, limite } = req.query;
+            let { page=1, limit=10, sortBy = 'createdAt', sortOrder = 'DESC' } = req.query;
 
-            // Valores predeterminados
-            pagina = pagina ? parseInt(pagina) : 1;
-            limite = limite ? parseInt(limite) : 10;
-
-            const offset = (pagina - 1) * limite;
-            let posts = await Post.findAll({
-                offset,
-                limit:limite
-            })
+            const posts = await Post.findAll({
+                offset: (page - 1) * limit,
+                limit: +limit,
+                order: [[sortBy, sortOrder]],
+              });
             return res.json(posts)
         } catch (err) {
-            return res.status(500).json(err)
+            return res.status(500).json({response:false,message:err})
         }
     }
 
@@ -43,26 +39,26 @@ class PostController{
                 title,body
             })
 
-            return res.json(inserted)
+            return res.status(201).json(inserted)
 
         } catch (err) {
-            return res.status(500).json(err)
+            return res.status(500).json({response:false,message:err})
         }
     }
 
     static update = async(req,res)=>{
         try {
             const {id} = req.params
-            const {body} = req
+            const {title,body} = req.body
             let post = await Post.findByPk(id);
             if (post) {
-                let updated = await post.update(body);
-                return res.json({updated})
+                let updated = await post.update({title,body});
+                return res.json(updated)
             } else {
-                return res.status(404).json({message:'Post not found'})
+                return res.status(404).json({response:false,message:'Post not found'})
             }
-        }catch (err) {
-            return res.status(500).json(err)
+        } catch (err) {
+            return res.status(500).json({response:false,message:err})
         }
     }
 
@@ -72,13 +68,15 @@ class PostController{
             let post = await Post.findByPk(id);
             if (post) {
                 let deleted = await post.destroy();
-                return res.json({deleted})
+                if(deleted){
+                    return res.json({response:true,message:'Post borrado correctamente'})
+                }
             } else {
-                return res.status(404).json({message:'Post not found'})
+                return res.status(404).json({response:false,message:'Post not found'})
             }
 
         } catch (err) {
-            return res.status(500).json(err)
+            return res.status(500).json({response:false,message:err})
         }
     }
 

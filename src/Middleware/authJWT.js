@@ -13,7 +13,6 @@ export default function (req, res, next){
         if(!token){
             return res.status(401).json({
                 response:false,
-                error:true,
                 message:'Token format is no valid'
             })
         }
@@ -24,12 +23,11 @@ export default function (req, res, next){
         if(Date.now()> payload.exp){
             return res.status(401).json({
                 response:false,
-                error:true,
                 message:'Token expired'
             })   
         }
         return next();
     } catch (error) {
-        res.status(401).json({response:false,error:true,message:"Invalid token"});
+        res.status(401).json({response:false,message:"Invalid token"});
     }
 }

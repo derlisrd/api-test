@@ -10,7 +10,7 @@ class AuthController{
             const {email,password} = req.body
             const usuario = await User.findOne({ where: { email: email } });
             if (!usuario) {
-                return res.status(401).json({message:'Invalid credencials'})
+                return res.status(401).json({response:false,message:"Credenciales inválidas"})
             }
             
             const match = await comparePasswords(password, usuario.password);
@@ -19,11 +19,11 @@ class AuthController{
                 const token = generateToken({ id: usuario.id });
                 return res.json({token})
             } else {
-                return res.status(401).json({message:'Invalid credencials'})
+                return res.status(401).json({response:false,message:"Credenciales inválidas"})
             }
 
         } catch (err) {
-            return res.status(500).json(err)
+            return res.status(500).json({response:false,message:err})
         }
         
     }
@@ -31,16 +31,16 @@ class AuthController{
     static register = async(req,res)=>{
         try {
             const {email,password} = req.body
-            const hashedPassword = await encryptPassword(password);
 
+            const hashedPassword = await encryptPassword(password);
             const nuevoUsuario = await User.create({
                 email,
                 password:hashedPassword
               });
           
-           return res.json({response:true,message:nuevoUsuario})
+           return res.json(nuevoUsuario)
         } catch (err) {
-            return res.status(500).json(err)
+            return res.status(500).json({response:false,message:err})
         }
     }
 

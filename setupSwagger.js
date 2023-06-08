@@ -31,9 +31,9 @@ const opciones = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'API de Posts',
+      title: 'Doc API de Posts con nodeJs y MySQL',
       version: '1.0.0',
-      description: 'API para obtener posts paginados',
+      description: 'Documentación de API para obtener posts',
     },
     components:{
       securitySchemes : {
