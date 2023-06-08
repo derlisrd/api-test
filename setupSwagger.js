@@ -6,7 +6,7 @@ const swaggerDefinition = {
   info: {
     title: "API de Node Js con MySQL",
     version: "1.0.0",
-    description: "Documentación de la API de Node Mysql",
+    description: "Documentación de la API de Node Mysql Por Derlis Ruiz Diaz",
   },
   securityDefinitions: {
     BearerAuth: {

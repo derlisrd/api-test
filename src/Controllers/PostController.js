@@ -1,3 +1,4 @@
+import { Op } from "sequelize"
 import Post from "../Models/Post.js"
 
 class PostController{
@@ -16,11 +17,27 @@ class PostController{
         }
     }
 
+
+
     static all = async(req,res)=>{
         try {
-            let { page=1, limit=10, sortBy = 'createdAt', sortOrder = 'DESC' } = req.query;
+
+            
+            let { page=1, limit=10, sortBy = 'createdAt', sortOrder = 'DESC',searchBy,searchValue } = req.query;
+
+            let whereCondition = {};
+
+            if (searchBy && searchValue) {
+                whereCondition = {
+                    [searchBy]:{
+                        [Op.like]: `%${searchValue}%`
+                    }
+                };
+                console.log(whereCondition);
+            }
 
             const posts = await Post.findAll({
+                where: whereCondition,
                 offset: (page - 1) * limit,
                 limit: +limit,
                 order: [[sortBy, sortOrder]],
@@ -30,6 +47,8 @@ class PostController{
             return res.status(500).json({response:false,message:err})
         }
     }
+
+
 
     static create = async(req,res)=>{
         try {

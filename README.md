@@ -1,4 +1,5 @@
-# API CRUD con Node.js y MySQL
+
+# ⚡ API CRUD con Node.js y MySQL 🍃	 🐬 💻
 
 Esta es una API CRUD básica desarrollada con Node.js que utiliza Express y Sequelize para la gestión de una api
 
@@ -8,7 +9,7 @@ Esta es una API CRUD básica desarrollada con Node.js que utiliza Express y Sequ
 - npm (v6 o superior)
 - Gestor de base de datos (MySQL)
 
-## Instalación
+## Instalación  🚀
 
 1. Clona el repositorio:
 
@@ -92,6 +93,6 @@ Un objeto Post tiene la siguiente estructura:
 - **Generar verbos necesarios** - GET/POST/PUT/DELETE Tomar ejemplos de archivo ./Controller/PostController.js
 
  
-## License  
+## Licencia  
 
 [MIT](https://choosealicense.com/licenses/mit/)

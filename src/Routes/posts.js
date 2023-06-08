@@ -4,9 +4,9 @@ import PostValidator from "../Validators/PostValidator.js";
 
 const router = Router()
 
-router.get('/',PostController.all)
+router.get('/',PostValidator.get,PostController.all)
 
-router.get('/:id',PostController.find)
+router.get('/:id',PostValidator.find,PostController.find)
 
 router.post('/',PostValidator.create,PostController.create)
 
@@ -46,6 +46,11 @@ export default router
  *         schema:
  *           type: string
  *         description: Orden de clasificación de los resultados (por defecto DESC)
+ *       - in: query
+ *         name: title
+ *         schema:
+ *           type: string
+ *         description: Filtrar los posts por título (opcional)
  *     responses:
  *       200:
  *          description: Listado de posts encontrado
