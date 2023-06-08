@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
-import {sequelize} from '../Database/conexion.js'
+import {conexionDB} from '../Database/conexion.js'
 
-const Post = sequelize.define('posts', {
+const Post = conexionDB.sequelize.define('posts', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
