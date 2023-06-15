@@ -87,10 +87,20 @@ Un objeto Post tiene la siguiente estructura:
 
 ## Creando más tablas y endpoints
  
-- **Crear modelo en carpeta Models** - con el nombre del modelo en singular. Ej: Producto.js
-- **Crear controllador en carpeta Controllers** - con el nombre del modelo seguido de "Controller". Ej: ProductoController.js
-- **Crear ruta en carpeta Routes** - con el nombre en plural. Ej: productos.js
-- **Generar verbos necesarios** - GET/POST/PUT/DELETE Tomar ejemplos de archivo ./Controller/PostController.js
+1. Crea un Modelo con el comando:
+
+   ```bash
+   npm run new-model -- NOMBRE_DE_TABLA
+
+2. Crea los controladores
+    ```bash
+    npm run new-controller -- NombreController
+
+Puedes agregarles atributos al modelo editando el archivo creado en src/Models/nombre_modelo.js
+
+3. Crea las rutas con los verbos necesarios
+    ```bash
+    Tomar ejemplos de archivo ./Controller/PostController.js
 
  
 ## Licencia  
