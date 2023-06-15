@@ -102,5 +102,10 @@ Puedes agregarles atributos al modelo editando el archivo creado en src/Models/n
     ```bash
     Crearlos en la carpeta Routes. Tomar ejemplos de archivo ./Routes/posts.js
 
+4. Corre las migraciones
+    ```bash
+    npm run migrate
  
+## Licencia  
 
+[MIT](https://choosealicense.com/licenses/mit/)
