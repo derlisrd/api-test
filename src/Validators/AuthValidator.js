@@ -9,6 +9,12 @@ const AuthValidator = {
         check('email')
         .exists().withMessage('Debe tener un campo de email')
         .isEmail().withMessage('Debe ser un e-mail válido')
+        .custom(async value =>{
+            const existingUser = await User.findOne({ where: { email: value } });
+            if (!existingUser) {
+              throw new Error('Datos inexistentes');
+            }
+        })
         ,
         check('password')
         .exists().withMessage('Debe tener un campo de password')
