@@ -100,9 +100,7 @@ Puedes agregarles atributos al modelo editando el archivo creado en src/Models/n
 
 3. Crea las rutas con los verbos necesarios
     ```bash
-    Tomar ejemplos de archivo ./Controller/PostController.js
+    Crearlos en la carpeta Routes. Tomar ejemplos de archivo ./Routes/posts.js
 
  
-## Licencia  
 
-[MIT](https://choosealicense.com/licenses/mit/)
